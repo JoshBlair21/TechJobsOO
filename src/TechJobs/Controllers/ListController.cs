@@ -13,7 +13,7 @@ namespace TechJobs.Controllers
         // Our reference to the data store
         private static JobData jobData;
 
-        static ListController ()
+        static ListController()
         {
             jobData = JobData.GetInstance();
         }
@@ -34,7 +34,7 @@ namespace TechJobs.Controllers
             {
                 SearchJobsViewModel jobsViewModel = new SearchJobsViewModel();
                 jobsViewModel.Jobs = jobData.Jobs;
-                jobsViewModel.Title =  "All Jobs";
+                jobsViewModel.Title = "All Jobs";
                 return View("Jobs", jobsViewModel);
             }
             else
@@ -61,7 +61,7 @@ namespace TechJobs.Controllers
                 }
 
                 jobFieldsViewModel.Fields = fields;
-                jobFieldsViewModel.Title =  "All " + column + " Values";
+                jobFieldsViewModel.Title = "All " + column + " Values";
                 jobFieldsViewModel.Column = column;
 
                 return View(jobFieldsViewModel);
